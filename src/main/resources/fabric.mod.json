@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "coloredallays",
+	"version": "${version}",
+	"name": "ColoredAllays",
+	"description": "",
+	"authors": [
+		"MaximPixel"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/coloredallays/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"net.maximpixel.coloredallays.client.ColoredAllaysClient"
+		],
+		"main": [
+			"net.maximpixel.coloredallays.ColoredAllays"
+		]
+	},
+	"mixins": [
+		"coloredallays.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.13.3",
+		"fabric": "*",
+		"minecraft": "1.19-alpha.22.16.b"
+	}
+}
