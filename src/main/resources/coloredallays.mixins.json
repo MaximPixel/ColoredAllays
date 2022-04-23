@@ -4,8 +4,10 @@
 	"package": "net.maximpixel.coloredallays.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
+
 	],
 	"client": [
+		"MixinAllayEntityModel"
 	],
 	"injectors": {
 		"defaultRequire": 1
