@@ -4,7 +4,7 @@
 	"package": "net.maximpixel.coloredallays.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-
+		"MixinAllayEntity"
 	],
 	"client": [
 		"MixinAllayEntityModel"
