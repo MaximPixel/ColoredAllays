@@ -3,7 +3,7 @@
 	"id": "coloredallays",
 	"version": "${version}",
 	"name": "Colored Allays",
-	"description": "",
+	"description": "This is a simple mod that adds the ability to color Allays with dye! Just right-click on the Allay while holding the desired dye!",
 	"authors": [
 		"MaximPixel"
 	],
@@ -11,20 +11,13 @@
 	"license": "MIT",
 	"icon": "assets/coloredallays/icon.png",
 	"environment": "*",
-	"entrypoints": {
-		"client": [
-			"net.maximpixel.coloredallays.client.ColoredAllaysClient"
-		],
-		"main": [
-			"net.maximpixel.coloredallays.ColoredAllays"
-		]
-	},
+	"entrypoints": {},
 	"mixins": [
 		"coloredallays.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.13.3",
 		"fabric": "*",
-		"minecraft": "1.19-alpha.22.16.b"
+		"minecraft": ">=1.19-alpha"
 	}
 }
