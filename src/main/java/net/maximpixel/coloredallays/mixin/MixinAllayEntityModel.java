@@ -33,6 +33,7 @@ public class MixinAllayEntityModel {
 
 	/**
 	 * @author MaximPixel
+	 * @reason to recolor default model
 	 */
 	@Overwrite
 	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
