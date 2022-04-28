@@ -47,7 +47,15 @@ public class MixinAllayEntity extends PathAwareEntity implements ColoredAllay {
 	@Override
 	public void readCustomDataFromNbt(NbtCompound nbt) {
 		super.readCustomDataFromNbt(nbt);
-		setAllayColor(DyeColor.byId(nbt.getByte("AllayColor")));
+
+		byte colorByte;
+		if (nbt.contains("AllayColor", 99)) {
+			colorByte = nbt.getByte("AllayColor");
+		} else {
+			colorByte = (byte)3;
+		}
+
+		setAllayColor(DyeColor.byId(colorByte));
 	}
 
 	@Override
