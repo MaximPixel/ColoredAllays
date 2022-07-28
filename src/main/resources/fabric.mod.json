@@ -18,6 +18,6 @@
 	"depends": {
 		"fabricloader": ">=0.13.3",
 		"fabric": "*",
-		"minecraft": ">=1.19-alpha"
+		"minecraft": ">=1.19"
 	}
 }
