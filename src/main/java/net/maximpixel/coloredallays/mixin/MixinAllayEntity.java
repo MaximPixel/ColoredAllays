@@ -21,6 +21,7 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AllayEntity.class)
@@ -32,29 +33,19 @@ public class MixinAllayEntity extends PathAwareEntity implements ColoredAllay {
 		super(entityType, world);
 	}
 
-	@Override
-	protected void initDataTracker() {
-		super.initDataTracker();
+	@Inject(at = @At("TAIL"), method = "initDataTracker()V")
+	protected void initDataTracker(CallbackInfo ci) {
 		dataTracker.startTracking(COLOR, (byte)3);
 	}
 
-	@Override
-	public void writeCustomDataToNbt(NbtCompound nbt) {
-		super.writeCustomDataToNbt(nbt);
+	@Inject(at = @At("TAIL"), method = "writeCustomDataToNbt(Lnet/minecraft/nbt/NbtCompound;)V")
+	public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
 		nbt.putByte("AllayColor", (byte)getAllayColor().getId());
 	}
 
-	@Override
-	public void readCustomDataFromNbt(NbtCompound nbt) {
-		super.readCustomDataFromNbt(nbt);
-
-		byte colorByte;
-		if (nbt.contains("AllayColor", 99)) {
-			colorByte = nbt.getByte("AllayColor");
-		} else {
-			colorByte = (byte)3;
-		}
-
+	@Inject(at = @At("TAIL"), method = "readCustomDataFromNbt(Lnet/minecraft/nbt/NbtCompound;)V")
+	public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
+		byte colorByte = nbt.contains("AllayColor", 99) ? nbt.getByte("AllayColor") : (byte) 3;
 		setAllayColor(DyeColor.byId(colorByte));
 	}
 
