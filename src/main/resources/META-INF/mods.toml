@@ -1,0 +1,20 @@
+modLoader = "javafml"
+loaderVersion = "[42,)"
+license = "MIT"
+[[mods]]
+modId = "coloredallays"
+version = "${file.jarVersion}"
+displayName = "Colored Allays"
+description = "This is a simple mod that adds the ability to color Allays with dye! Just right-click on the Allay while holding the desired dye!"
+[[dependencies.coloredallays]]
+modId = "forge"
+mandatory = true
+versionRange = "[42,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.coloredallays]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.1,1.20)"
+ordering = "NONE"
+side = "BOTH"

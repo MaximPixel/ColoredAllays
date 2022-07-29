@@ -1,6 +1,6 @@
 package net.maximpixel.coloredallays;
 
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
 
 public interface ColoredAllay {
 	DyeColor getAllayColor();
